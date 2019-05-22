@@ -21,7 +21,7 @@ define librsvg_BUILD
     cd '$(BUILD_DIR)' && $(SOURCE_DIR)/configure \
         $(MXE_CONFIGURE_OPTS) \
         --disable-introspection \
-        LIBS="-lws2_32 -luserenv -lintl" \
+        LIBS="-lws2_32 -luserenv" \
         RUST_TARGET=$(firstword $(subst -, ,$(TARGET)))-pc-windows-gnu
 
     $(MAKE) -C '$(BUILD_DIR)' -j '$(JOBS)'
