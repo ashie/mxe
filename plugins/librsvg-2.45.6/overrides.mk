@@ -20,10 +20,7 @@ define librsvg_BUILD
     cd '$(SOURCE_DIR)' && autoreconf -fi -I'$(PREFIX)/$(TARGET)/share/aclocal'
     cd '$(BUILD_DIR)' && $(SOURCE_DIR)/configure \
         $(MXE_CONFIGURE_OPTS) \
-        --disable-pixbuf-loader \
-        --disable-gtk-doc \
         --disable-introspection \
-        --disable-tools \
         LIBS="-lws2_32 -luserenv -lintl" \
         RUST_TARGET=$(firstword $(subst -, ,$(TARGET)))-pc-windows-gnu
 
